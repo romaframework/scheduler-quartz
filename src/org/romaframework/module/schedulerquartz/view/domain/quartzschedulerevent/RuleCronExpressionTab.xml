@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://www.romaframework.org/xml/roma" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+	xsd:schemaLocation="http://www.romaframework.org/xml/roma http://www.romaframework.org/schema/v2/roma.xsd">
+	<aspects>
+		<view>
+			<form>
+				<area name="main" type="column">
+					<area name="row" type="column">
+						<area name="fields" type="form" size="2" align="top left" />
+						<area name="ruleSyntaxHelp" type="column" align="top left" />
+					</area>
+					<area name="actions" type="row" />
+				</area>
+			</form>
+		</view>
+	</aspects>
+</class>

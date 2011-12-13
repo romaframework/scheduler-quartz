@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://www.romaframework.org/xml/roma" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+	xsd:schemaLocation="http://www.romaframework.org/xml/roma http://www.romaframework.org/schema/v2/roma.xsd">
+	<aspects>
+		<view>
+			<form>
+				<area name="main" type="column">
+					<area name="row" type="row">
+						<area name="days" />
+						<area name="timePanel" type="form" size="3" align="top left" />
+					</area>
+					<area name="actions" type="row" />
+				</area>
+			</form>
+		</view>
+	</aspects>
+	<fields>
+		<field name="hours">
+			<aspects>
+				<view layout="form://timePanel" />
+			</aspects>
+		</field>
+		<field name="minutes">
+			<aspects>
+				<view layout="form://timePanel" />
+			</aspects>
+		</field>
+		<field name="seconds">
+			<aspects>
+				<view layout="form://timePanel" />
+			</aspects>
+		</field>
+	</fields>
+</class>
