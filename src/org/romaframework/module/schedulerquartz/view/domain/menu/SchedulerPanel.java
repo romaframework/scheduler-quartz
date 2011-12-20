@@ -30,11 +30,11 @@ import org.romaframework.module.schedulerquartz.view.domain.quartzschedulerevent
 @CoreClass(orderActions = "calendar jobs")
 public class SchedulerPanel {
 
-  @FlowAction(next = EventCalendarForm.class, position = "screen://body")
+  @FlowAction(next = EventCalendarForm.class, position = "body")
   public void calendar() {
   }
 
-  @FlowAction(next = QuartzSchedulerEventMain.class, position = "screen://body")
+  @FlowAction(next = QuartzSchedulerEventMain.class, position = "body")
   public void jobs() {
 
   }

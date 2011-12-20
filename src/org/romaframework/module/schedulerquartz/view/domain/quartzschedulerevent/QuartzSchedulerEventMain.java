@@ -11,13 +11,9 @@ import org.romaframework.frontend.domain.crud.CRUDMain;
 import org.romaframework.frontend.domain.message.MessageOk;
 import org.romaframework.frontend.view.domain.RomaControlPanelTab;
 
-public class QuartzSchedulerEventMain extends
-		CRUDMain<QuartzSchedulerEventListable>  implements RomaControlPanelTab{
+public class QuartzSchedulerEventMain extends CRUDMain<QuartzSchedulerEventListable> implements RomaControlPanelTab {
 	public QuartzSchedulerEventMain() {
-		super(QuartzSchedulerEventListable.class,
-				QuartzSchedulerEventInstance.class,
-				QuartzSchedulerEventInstance.class,
-				QuartzSchedulerEventInstance.class);
+		super(QuartzSchedulerEventListable.class, QuartzSchedulerEventInstance.class, QuartzSchedulerEventInstance.class, QuartzSchedulerEventInstance.class);
 		filter = new QuartzSchedulerEventFilter();
 		result = new ArrayList<QuartzSchedulerEventListable>();
 	}
@@ -27,8 +23,7 @@ public class QuartzSchedulerEventMain extends
 
 		Object[] triggers = getSelection();
 		for (Object trigger : triggers)
-			Roma.aspect(SchedulerAspect.class).unSchedule(
-					((QuartzSchedulerEventListable) trigger).getEntity());
+			Roma.aspect(SchedulerAspect.class).unSchedule(((QuartzSchedulerEventListable) trigger).getEntity());
 
 		super.delete();
 	}
@@ -37,8 +32,7 @@ public class QuartzSchedulerEventMain extends
 
 		Object[] triggers = getSelection();
 		for (Object trigger : triggers)
-			Roma.aspect(SchedulerAspect.class).pauseJob(
-					((QuartzSchedulerEventListable) trigger).getEntity());
+			Roma.aspect(SchedulerAspect.class).pauseJob(((QuartzSchedulerEventListable) trigger).getEntity());
 	}
 
 	public void resume() throws InstantiationException, IllegalAccessException {
@@ -46,8 +40,7 @@ public class QuartzSchedulerEventMain extends
 		Object[] triggers = getSelection();
 		for (Object trigger : triggers) {
 			// TODO check status
-			Roma.aspect(SchedulerAspect.class).unpauseJob(
-					((QuartzSchedulerEventListable) trigger).getEntity());
+			Roma.aspect(SchedulerAspect.class).unpauseJob(((QuartzSchedulerEventListable) trigger).getEntity());
 		}
 	}
 
@@ -71,22 +64,17 @@ public class QuartzSchedulerEventMain extends
 		Object[] triggers = getSelection();
 
 		if (triggers == null) {
-			Roma.flow()
-					.forward(
-							new MessageOk("1", "$Message.Warning", null,
-									"$CRUDMain.selectAtLeastOne.error"),
-							"screen:popup");
+			Roma.flow().popup(new MessageOk("1", "$Message.Warning", null, "$CRUDMain.selectAtLeastOne.error"));
 			return;
 		}
 
 		for (Object trigger : triggers) {
-			Roma.aspect(SchedulerAspect.class).executeNow(
-					((QuartzSchedulerEventListable) trigger).getEntity());
+			Roma.aspect(SchedulerAspect.class).executeNow(((QuartzSchedulerEventListable) trigger).getEntity());
 		}
 	}
 
 	@CoreField(embedded = AnnotationConstants.TRUE)
-	protected QuartzSchedulerEventFilter filter;
+	protected QuartzSchedulerEventFilter					filter;
 
-	protected List<QuartzSchedulerEventListable> result;
+	protected List<QuartzSchedulerEventListable>	result;
 }
