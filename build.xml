@@ -2,4 +2,18 @@
 <project basedir="." default="compile" name="roma-scheduler-quartz">
 	<get src="https://github.com/romaframework/core/raw/master/roma-build.xml" dest="roma-build.xml" skipexisting="true" />
 	<import file="roma-build.xml" />
+	
+	
+	<path id="project.enhancement.classpath">
+		<fileset dir="../persistence-datanucleus/lib" includes="**/*.jar" />
+		<pathelement path="build/src"/>
+	</path>
+		
+	<target name="persistence-compile">
+		<taskdef classname="org.datanucleus.enhancer.tools.EnhancerTask" classpathref="project.enhancement.classpath" name="datanucleusenhancer" />
+		
+		<datanucleusenhancer detachListener="true" classpathref="project.enhancement.classpath" dir="build/src" failonerror="true" verbose="true" generateconstructor="">
+			<jvmarg line="-Dlog4j.configuration=file:src/datanucleus-log4j.properties" />
+		</datanucleusenhancer>
+	</target>
 </project>
