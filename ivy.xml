@@ -1,6 +1,6 @@
 <ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
-	<info organisation="org.romaframework" module="roma-scheduler-quartz" revision="2.9" />
+	<info organisation="org.romaframework" module="roma-scheduler-quartz" revision="3.0.0-SNAPSHOT" />
 	<configurations defaultconfmapping="*->*,!sources,!javadoc,!optional">
 		<conf name="default" visibility="public" />
 		<conf name="test" visibility="private" />
