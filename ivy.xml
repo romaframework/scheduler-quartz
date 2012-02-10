@@ -11,7 +11,6 @@
 		<artifact name="roma-scheduler-quartz" ext="jar" type="jar" conf="default"></artifact>
 		<artifact name="roma-scheduler-quartz-test" ext="jar" type="jar" conf="test"></artifact>
 		<artifact name="roma-scheduler-quartz-wizard" ext="zip" type="zip" conf="wizard"></artifact>
-		<artifact name="roma-scheduler-quartz" ext="pom" type="pom" conf="publish"></artifact>
 	</publications>
 	<dependencies>
 		<dependency org="org.quartz-scheduler" name="quartz" rev="latest.integration" conf="*->default" />
