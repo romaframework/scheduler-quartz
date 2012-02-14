@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." default="compile" name="roma-scheduler-quartz">
+	<property name="ivy.pom.name" value="Roma Scheduler Quartz" />
+	<property name="ivy.pom.description" value="Roma Scheduler aspect impelementation with quartz" />
+	<property name="ivy.pom.repo-name" value="scheduler-quartz" />
 	<get src="https://github.com/romaframework/core/raw/master/roma-build.xml" dest="roma-build.xml" skipexisting="true" />
 	<import file="roma-build.xml" />
 	
