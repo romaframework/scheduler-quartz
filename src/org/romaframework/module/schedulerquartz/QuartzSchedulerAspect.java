@@ -49,11 +49,7 @@ import org.romaframework.core.Roma;
 import org.romaframework.core.Utility;
 import org.romaframework.core.command.Command;
 import org.romaframework.core.command.CommandContext;
-import org.romaframework.core.schema.SchemaAction;
-import org.romaframework.core.schema.SchemaClassDefinition;
 import org.romaframework.core.schema.SchemaClassResolver;
-import org.romaframework.core.schema.SchemaEvent;
-import org.romaframework.core.schema.SchemaField;
 import org.romaframework.module.schedulerquartz.command.CommandJobDelegate;
 import org.romaframework.module.schedulerquartz.domain.QuartzSchedulerEvent;
 
@@ -345,18 +341,7 @@ public class QuartzSchedulerAspect extends SchedulerAspectAbstract implements Jo
 	protected void registerCustomCalendars() {
 	}
 
-	public void configAction(SchemaAction action) {
-	}
-
-	public void configClass(SchemaClassDefinition class1) {
-	}
-
-	public void configEvent(SchemaEvent event) {
-	}
-
-	public void configField(SchemaField field) {
-	}
-
+	
 	public String getName() {
 		return this.getClass().getSimpleName();
 	}
